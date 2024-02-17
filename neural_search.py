@@ -4,7 +4,7 @@ import argparse
 
 
 encoder = SentenceTransformer("all-MiniLM-L6-v2")
-qdrant = QdrantClient(":memory:")
+qdrant = QdrantClient("http://localhost:6333")
 
 def neural_search(query):
     print(f"Running neural search with term: {query}")
@@ -17,7 +17,16 @@ def neural_search(query):
         print(hit.payload, "score:", hit.score)
     
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Run a neural search with a specified term.")
-    parser.add_argument('search_term', type=str, help="The search term for the neural search")
-    args = parser.parse_args()
-    neural_search(args.search_term)
+    print("Neural search service. Type 'exit' to stop.")
+    while True:
+        try:
+            query = input("Enter search term: ")
+            if query.lower() == 'exit':
+                print("Exiting neural search service.")
+                break
+            neural_search(query)
+        except KeyboardInterrupt:
+            print("\nDetected Ctrl+C, exiting neural search service.")
+            break
+        except Exception as e:
+            print(f"An error occurred: {e}")

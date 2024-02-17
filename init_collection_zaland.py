@@ -8,7 +8,10 @@ import signal
 
 
 encoder = SentenceTransformer("all-MiniLM-L6-v2")
-qdrant = QdrantClient(":memory:")
+#qdrant = QdrantClient(":memory:")
+qdrant = QdrantClient("http://localhost:6333")
+
+
 
 def signal_handler(sig, frame):
     print('You pressed Ctrl+C!')
