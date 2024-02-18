@@ -15,7 +15,6 @@
   - Qdrant is a vector search engine optimized for storing and querying large collections of vector embeddings.
 
 - **Embeddings Collections**: 
-  - Stores crawled pages.
   - Each web page or document in the Page Repository would have a corresponding vector in the Embeddings Collections, representing the semantic essence of that page's content.
   - These embeddings are used for performing similarity searches, which can return results based on the content's meaning rather than just keyword matching.
 
