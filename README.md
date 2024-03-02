@@ -1,7 +1,7 @@
-# Zalando-Interview-Demo
+#
 
 ## Project Architecture
-<img src="images/workflow.png" alt="UMAP Projection of Content Vector Embeddings" style="max-width: 60%; height: auto;" />
+<img src="images/workflow.png" alt="UMAP Projection of Content Vector Embeddings" style="max-width: 100%; height: auto;" />
 
 - **Crawler**: 
   - Begins the process by discovering new and updated web pages.
